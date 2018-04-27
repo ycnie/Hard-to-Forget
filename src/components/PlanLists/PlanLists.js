@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import Test from './Test';
 // import NavBar from './NavBar';
-import ListTable from './ListTable';
-import CheckList from './CheckList';
-import TextInput from './TextArea';
-import Progress from './Progress';
-import Btn from './Button';
+import ListTable from '../ListTable/ListTable';
+import CheckList from '../CheckList/CheckList';
+import TextInput from '../TextArea/TextArea';
+import Progress from '../Progress/Progress';
+import Btn from '../Button/Button';
 
 
 class PlanLists extends Component {

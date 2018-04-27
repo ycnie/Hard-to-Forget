@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ListGroupItem } from 'react-bootstrap';
-import Btn from './Button';
-import CheckBoxItem from './CheckBoxItem'
+import Btn from '../Button/Button';
+import CheckBoxItem from '../CheckBoxItem/CheckBoxItem'
 
 class CheckList extends Component {
 
@@ -30,7 +30,7 @@ class CheckList extends Component {
               return (
                 <div className='checklist-item' key={item + i}>
                 <CheckBoxItem itemIndex={i} toggle={this.toggle} isChecked={true}></CheckBoxItem>
-                <ListGroupItem className='list-group-item' href="#link1">
+                <ListGroupItem className='list-group-item strike' href="#link1">
                   {item}</ListGroupItem>
                 {/* <div>{i}</div> */}
                 <Btn value={`${currentList}-${i}`} btnValue='Delete' func={deleteItem}></Btn>
