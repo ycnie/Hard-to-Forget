@@ -27,7 +27,7 @@ const Home = () => <h1>Hello Home!</h1>
     // }
     render() {
       return (
-        <div>
+        <div className='app'>
           <Particles className='particles'
             params={paramsOfParticles}
           />
