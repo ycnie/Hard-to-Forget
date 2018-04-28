@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, Nav, MenuItem, NavDropdown } from 'react-bootstrap';
+import './NavBar.css';
 
 class NavBar extends Component {
   render() {
     return (
-      <Navbar className='nav-bar-container' inverse collapseOnSelect >
+      <Navbar className='nav-bar-container font-gugi f4' inverse collapseOnSelect >
         <Navbar.Header>
           <Navbar.Brand>
             {/* <a href="#brand">Hard To Forget!</a> */}
-            <div>Hard to Forget!</div>
+            <div className='font-shri f2 b ttu'>Hard to Forget !</div>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -20,12 +21,10 @@ class NavBar extends Component {
             <NavItem eventKey={2} href="#/calender">
               Calendar
       </NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}><h1>Action</h1></MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
+              <MenuItem eventKey={3.1} href="#/join-us">Join us</MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
+              <MenuItem eventKey={3.3} href="#/contact">Contact</MenuItem>
             </NavDropdown>
           </Nav>
           <Nav pullRight>

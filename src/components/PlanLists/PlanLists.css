@@ -1,0 +1,65 @@
+.planlists-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.planlists-container > *{
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.list-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    height: 500px;
+}
+  
+.list-container {
+  align-self: stretch;
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.list-table-and-progress {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.list-table-and-progress {
+  width: 30%;
+  margin:20px;
+}
+
+.list-table-and-progress {
+    text-align: left;
+}
+
+.checklist-and-text {
+  width: 50%;
+  margin: 20px;
+  padding: 10px;
+}
+
+.input-field {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.text-field {
+  width: 75%;
+}
+
+.br-pill {
+    width: 25%;
+    height: 40px;
+    text-align: center;
+    color: white;
+    border: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { ListGroupItem } from 'react-bootstrap';
 import Btn from '../Button/Button';
-import CheckBoxItem from '../CheckBoxItem/CheckBoxItem'
+import CheckBoxItem from '../CheckBoxItem/CheckBoxItem';
+import './CheckList.css';
 
 class CheckList extends Component {
 
@@ -14,6 +15,7 @@ class CheckList extends Component {
     this.props.handleCheckBox(idx);
   }
 
+
   render() {
     const { 
       listItems, // js object
@@ -23,14 +25,14 @@ class CheckList extends Component {
     } = this.props;
 
     return (
-      <div className='checklist'>
+      <div className='checklist font-indie'>
         {
           listItems[currentList].map((item, i) => {
             if (curProgress.has(i)) {
               return (
                 <div className='checklist-item' key={item + i}>
                 <CheckBoxItem itemIndex={i} toggle={this.toggle} isChecked={true}></CheckBoxItem>
-                <ListGroupItem className='list-group-item strike' href="#link1">
+                <ListGroupItem className='list-group-item strike' >
                   {item}</ListGroupItem>
                 {/* <div>{i}</div> */}
                 <Btn value={`${currentList}-${i}`} btnValue='Delete' func={deleteItem}></Btn>
@@ -40,7 +42,7 @@ class CheckList extends Component {
             return (
               <div className='checklist-item' key={item + i}>
                 <CheckBoxItem itemIndex={i} toggle={this.toggle} isChecked={false}></CheckBoxItem>
-                <ListGroupItem className='list-group-item' href="#link1">
+                <ListGroupItem className='list-group-item'>
                   {item}</ListGroupItem>
                 {/* <div>{i}</div> */}
                 <Btn value={`${currentList}-${i}`} btnValue='Delete' func={deleteItem}></Btn>

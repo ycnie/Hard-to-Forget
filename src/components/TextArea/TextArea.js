@@ -41,7 +41,7 @@ class TextInput extends Component {
 
     return (
       <FormGroup bsSize='lg' className='text-field'>
-        <FormControl onChange={this.handleChange} type="text" placeholder="What to do next..." onKeyPress={this.handleEnterPress}/>
+        <FormControl id='input-box' onChange={this.handleChange} type="text" placeholder="What to do next..." onKeyPress={this.handleEnterPress}/>
       </FormGroup>
     );
   }

@@ -6,6 +6,9 @@ import CheckList from '../CheckList/CheckList';
 import TextInput from '../TextArea/TextArea';
 import Progress from '../Progress/Progress';
 import Btn from '../Button/Button';
+import PopDetails from '../PopDetails/PopDetails';
+import './PlanLists.css';
+import { get } from 'https';
 
 
 class PlanLists extends Component {
@@ -35,19 +38,25 @@ class PlanLists extends Component {
         'Academic': new Set()
       },
       textField: '',
-      listDescription: ''
+      listDescription: '',
+      show: false
     }
+    this.textFieldInput = this.textFieldInput.bind(this);
+    this.createItem = this.createItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
+    this.handleCheckBox = this.handleCheckBox.bind(this);
+    this.listChange = this.listChange.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   textFieldInput = (textInput) => {
     this.setState({
       textField: textInput
     })
-    console.log(textInput)
   }
 
   createItem = (event) => {
-    console.log('called')
     var listItems = this.state.listItems;
     var text = this.state.textField;
     if (text.length > 0) {
@@ -56,6 +65,8 @@ class PlanLists extends Component {
     this.setState((prevState, props) => ({
       listItems: listItems,
     }))
+    var box = document.getElementById('input-box');
+    box.value = '';
   }
 
   deleteItem = (event) => {
@@ -95,18 +106,68 @@ class PlanLists extends Component {
     })
   }
 
+  showModal = () => {
+    this.setState({
+      show: true
+    })
+  }
+
+  handleClose = (title, content) => {
+    this.setState({
+      show: false
+    })
+    var titleText = title.value;
+    var contentText = content.value;
+    if (titleText.length > 0 && contentText.length > 0) {
+      var lists = this.state.lists;
+      var listItems = this.state.listItems;
+      var desctription = this.state.desctription;
+      var progress = this.state.progress;
+      lists.push(titleText);
+      listItems[titleText] = [];
+      desctription[titleText] = contentText;
+      progress[titleText] = new Set();
+      this.setState({
+        lists: lists,
+        listItems: listItems,
+        desctription: desctription,
+        progress: progress
+      })
+    }
+  }
+
+  handleProgress = () => {
+
+  }
+
+
+  
+
   render() {
+
+    const total = this.state.listItems[this.state.currentList].length;
+    const checked = this.state.progress[this.state.currentList].size;
+    const progressResult = total === 0 
+    ? 'Start your plan now!!' 
+    : ((checked === total)
+    ? 'Nice Done! You have accomplished your plan!!' 
+    : `You Still have ${total-checked} things to do! Keep it Up!!!` );
+
     return (
-      <div className='app-container'>
+      <div className='planlists-container'>
         {/* <NavBar></NavBar> */}
         <div className='list-container'>
           <div className='list-table-and-progress'>
             <ListTable 
               desc={this.state.desctription} 
               listChange={this.listChange}></ListTable>
+              <input type='button' value='Add' className='br-pill bg-blue grow grow:hover shadow-3 font-gugi' onClick={this.showModal}/>
+            <PopDetails show={this.state.show} handleClose={this.handleClose}/>
             <Progress 
-              totalItems={this.state.listItems[this.state.currentList]} 
-              checkedItems={this.state.progress[this.state.currentList]}></Progress>
+              totalItems={total} 
+              checkedItems={checked}
+              result={progressResult}
+              handleProgress={this.handleProgress}></Progress>
           </div>
           <div className='checklist-and-text'>
             <div className='input-field'>
@@ -114,7 +175,7 @@ class PlanLists extends Component {
                 inputText={this.textFieldInput}
                 createItem={this.createItem}
               ></TextInput>
-              <Btn btnValue={'Add'} func={this.createItem}></Btn>
+              <Btn className='font-gugi' btnValue={'Add'} func={this.createItem}></Btn>
             </div>
             <CheckList 
               listItems={this.state.listItems} 

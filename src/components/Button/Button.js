@@ -11,7 +11,7 @@ class Btn extends Component {
   render() {
     const {btnValue, func, value} = this.props;
     return(
-      <Button value={value} className='btn' bsStyle="primary" onClick={func}>{btnValue}</Button>
+      <Button value={value} className='btn shadow-3' bsStyle="primary" onClick={func}>{btnValue}</Button>
     );
   }
 }

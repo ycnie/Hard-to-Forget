@@ -1,98 +1,9 @@
-.App {
+/* .App {
   text-align: center;
   height: 100%;
   display: flex;
   flex-flow: row wrap;
-}
-
-.app-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.app-container > *{
-  padding: 10px;
-  flex: 1 100%;
-}
-
-.nav-bar-container {
-  align-self: flex-start;
-  margin-bottom: 10px;
-  height: 80px;
-}
-
-.list-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.list-container {
-  align-self: stretch;
-  padding: 10px;
-  flex: 1 100%;
-}
-
-.list-table-and-progress {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: space-around;
-}
-
-.list-table-and-progress {
-  width: 30%;
-  margin:20px;
-}
-
-.progress-list {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  margin-top: 10px;
-}
-
-.progress-container {
-  width: 100%;
-  height: auto;
-}
-
-.checklist-and-text {
-  width: 50%;
-  margin: 20px;
-  padding: 10px;
-}
-
-.checklist {
-  text-align: left;
-}
-
-.checklist-item {
-  display: flex;
-  width: 100%;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.checklist-item .btn {
-  width: 10%;
-}
-
-.list-group-item {
-  width: 85%;
-}
-
-.input-field {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-.text-field {
-  width: 75%;
-}
+} */
 
 .btn {
   width: 20%;
@@ -109,34 +20,15 @@
   z-index: -1;
 }
 
-
-
-
-
-
-
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.font-gugi {
+  font-family: 'Gugi', cursive;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.font-indie {
+  font-family: 'Indie Flower', cursive;
+  font-size: 25px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.font-shri {
+  font-family: 'Shrikhand', cursive;
 }
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
-

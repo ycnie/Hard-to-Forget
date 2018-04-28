@@ -1,0 +1,16 @@
+.progress-list {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 10px;
+}
+
+.progress-container {
+  width: 100%;
+  height: auto;
+}
+
+.progress-result {
+  font-family: 'Gugi', cursive;
+  font-size: 35px;
+}
