@@ -18,8 +18,8 @@ class NavBar extends Component {
             <NavItem eventKey={1} href="#/planlists">
               Plan Lists
       </NavItem>
-            <NavItem eventKey={2} href="#/calender">
-              Calendar
+            <NavItem eventKey={2} href="#/card">
+              Stickers
       </NavItem>
             <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1} href="#/join-us">Join us</MenuItem>

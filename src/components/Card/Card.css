@@ -1,0 +1,43 @@
+.card-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.card-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+}
+
+.card-input-text {
+    width: 80%;
+    margin-right: 10px;
+}
+
+.card-button {
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.card-stickers {
+    display: flex;
+    flex-flow: row wrap;
+}
+.draggable-card {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    width: 200px;
+    height: 300px;
+}
+
+.draggable-button {
+    width: 70px;
+    height: 40px;
+}

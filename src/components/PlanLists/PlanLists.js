@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import Test from './Test';
-// import NavBar from './NavBar';
 import ListTable from '../ListTable/ListTable';
 import CheckList from '../CheckList/CheckList';
 import TextInput from '../TextArea/TextArea';
@@ -8,7 +6,6 @@ import Progress from '../Progress/Progress';
 import Btn from '../Button/Button';
 import PopDetails from '../PopDetails/PopDetails';
 import './PlanLists.css';
-import { get } from 'https';
 
 
 class PlanLists extends Component {
@@ -50,6 +47,14 @@ class PlanLists extends Component {
     this.handleClose = this.handleClose.bind(this);
   }
 
+  storeToLocal(key, val) {
+    sessionStorage.setItem(key, JSON.stringify(val));
+  }
+
+  getFromLocal(key) {
+    return sessionStorage.getItem(key);
+  }
+
   textFieldInput = (textInput) => {
     this.setState({
       textField: textInput
@@ -57,14 +62,15 @@ class PlanLists extends Component {
   }
 
   createItem = (event) => {
-    var listItems = this.state.listItems;
     var text = this.state.textField;
+    var listItems = this.state.listItems;
     if (text.length > 0) {
       listItems[this.state.currentList].push(text);
     }
     this.setState((prevState, props) => ({
       listItems: listItems,
     }))
+    // this.storeToLocal(this.state.listItems, listItems);
     var box = document.getElementById('input-box');
     box.value = '';
   }
@@ -78,10 +84,10 @@ class PlanLists extends Component {
     }
     let listItems = this.state.listItems;
     listItems[this.state.currentList].splice(index, 1);
-    // console.log(listItems[this.state.currentList])
     this.setState((prevState, props) => ({
       listItems: listItems,
     }))
+    // this.storeToLocal(this.state.listItems, listItems);
   }
 
   handleCheckBox = (v) => {
@@ -98,9 +104,6 @@ class PlanLists extends Component {
   }
 
   listChange = (lsName) => {
-    // this.setState({
-    //   listName: 'Grocery'
-    // })
     this.setState({
       currentList: lsName
     })
@@ -155,7 +158,6 @@ class PlanLists extends Component {
 
     return (
       <div className='planlists-container'>
-        {/* <NavBar></NavBar> */}
         <div className='list-container'>
           <div className='list-table-and-progress'>
             <ListTable 
