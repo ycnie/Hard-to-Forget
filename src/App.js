@@ -16,7 +16,7 @@ const Home = () => <h1>Hello Home!</h1>
 
 class App extends Component {
 
-  
+
 
   render() {
     return (
@@ -31,7 +31,7 @@ class App extends Component {
               <Route path='/planlists' component={PlanLists} />
               <Route path='/card' component={Card} />
               <Route path='/join-us' component={JoinUs} />
-              <Route path='/contact' component={Home} />
+              {/* <Route path='/contact' component={Home} /> */}
             </div>
           </HashRouter>
       </div>
